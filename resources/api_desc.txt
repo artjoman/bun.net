@@ -12,5 +12,11 @@ POST -> update
 GET -> retrieves all
 POST -> adds new
 
+mocks:
+party list http://www.mocky.io/v2/592946b60f0000bf0b3883c6
+party http://www.mocky.io/v2/592946f20f0000ca0b3883c9
+bun list http://www.mocky.io/v2/5929470a0f0000cf0b3883ca
+bun http://www.mocky.io/v2/5929471f0f0000cd0b3883cb
+
 SOAP
 TBD
