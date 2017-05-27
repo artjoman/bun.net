@@ -1,3 +1,14 @@
 <p>
   list-screen works!
 </p>
+
+<ul>
+  <li *ngFor="let party of parties">
+    <span>party id: {{party.id}}</span>
+    <span>name: {{party.name}}</span>
+    <span>type: {{party.type}}</span>
+    <span>phone: {{party.phone}}</span>
+    <span>email: {{party.email}}</span>
+    <span>status: {{party.status}}</span>
+  </li>
+</ul>
