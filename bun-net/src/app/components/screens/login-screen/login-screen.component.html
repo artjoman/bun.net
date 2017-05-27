@@ -1,10 +1,19 @@
-<div>
+<div class="text-center">
+<h3>Please Login</h3>
+
+<div class="padding-10">
   <label for="username">Username</label>
+</div>
+<div>
   <input id="username" [(ngModel)]="username" required/>
 </div>
-<div>
+<div class="padding-10">
   <label for="password">Password</label>
+</div>
+<div>
   <input id="password" [(ngModel)]="password" required/>
 </div>
-
+<div class="padding-10">
 <button md-button (click)="login()">Login</button>
+</div>
+</div>

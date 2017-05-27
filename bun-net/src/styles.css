@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/bootstrap/bootstrap.css';
+
+
+/*CUSTOM CSS*/
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+}
+.padding-10{
+    padding: 10px;
+    /*border: 1px solid #eee;*/
+}
+.heading{
+    background-color: #ececec;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 10px;
+    text-align: center; 
+}
+.page-body{
+    background-color: #fff;
+}
+
+
+.text-center{
+    text-align: center;
+    align-content: center;
+}
+.text-left{
+    text-align: left;
+    align-content: left;
+}
+.text-right{
+    text-align: right;
+    align-content: right;
+}
