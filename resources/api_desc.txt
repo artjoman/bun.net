@@ -24,6 +24,8 @@ getPartyList input:none, output:PartyList
 getParty input:PartyId, output:Party
 createParty input:Party, output:Status
 updateParty input:Party, output:Status
+getBunList input:PartyId, output:BunList
+createBun input:Bun, output:Status
 
 SOAP mock
 TBD in SoapUI
