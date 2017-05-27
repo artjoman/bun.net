@@ -1,25 +1,20 @@
-<definitions name="BunService" targetNamespace="http://bun.net/schema/v1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bun.net/schema/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://bun.net/schema/v1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://bun.net/schema/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
 	<types>
-		<schema xmlns="http://www.w3.org/2001/XMLSchema">
-			<import namespace="http://bun.net/schema/v1" schemaLocation="Bun.xsd"/>
-		</schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bun.net/schema/v1" elementFormDefault="qualified">
+			<xs:include schemaLocation="Bun.xsd"/>
+		</xs:schema>
 	</types>
-	<message name="CreatePartyRequest">
-		<part ref="tns:Bun"/>
-	</message>
-	<message name="CreatePartyResponse">
-		<part name="Status" type="xsd:string"/>
-	</message>
 	<portType name="BunPortType">
 		<operation name="createParty">
 			<input message="tns:CreatePartyRequest"/>
 			<output message="tns:CreatePartyResponse"/>
 		</operation>
 	</portType>
-	<binding name="BunBinding" type="tns:BunPortType">
+	<binding name="BunPortSOAP11Binding" type="tns:BunPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-		<operation>
-			<soap:operation soapAction="createParty"/>
+		<operation name="createParty">
+			<soap:operation/>
 			<input>
 				<soap:body use="literal"/>
 			</input>
@@ -28,9 +23,13 @@
 			</output>
 		</operation>
 	</binding>
+	<message name="CreatePartyRequest">
+		<part name="Party" element="tns:Party"/>
+	</message>
+	<message name="CreatePartyResponse">
+		<part name="Status" element="tns:Status"/>
+	</message>
 	<service name="BunService">
-		<port binding="tns:BunBinding" name="BunPort">
-			<soap:address location="http://bun.net"/>
-		</port>
+		<port name="BunPort" binding="tns:BunPortSOAP11Binding"/>
 	</service>
 </definitions>

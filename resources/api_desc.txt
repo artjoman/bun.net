@@ -8,7 +8,7 @@ POST -> adds new
 GET -> get specific
 POST -> update
 
-/bun
+/party/{partyId}/bun
 GET -> retrieves all
 POST -> adds new
 

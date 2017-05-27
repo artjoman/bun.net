@@ -1,6 +1,5 @@
-<?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bun.net/schema/v1" targetNamespace="http://bun.net/schema/v1" xmlns="http://bun.net/schema/v1">
-
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://bun.net/schema/v1" targetNamespace="http://bun.net/schema/v1" xmlns:tns="http://bun.net/schema/v1" elementFormDefault="qualified">
 	<xs:element name="BunList">
 		<xs:complexType>
 			<xs:sequence>
@@ -8,7 +7,6 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
 	<xs:element name="Bun">
 		<xs:complexType>
 			<xs:sequence>
@@ -21,7 +19,6 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
 	<xs:element name="PartyList">
 		<xs:complexType>
 			<xs:sequence>
@@ -29,7 +26,6 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
 	<xs:element name="Party">
 		<xs:complexType>
 			<xs:sequence>
@@ -39,6 +35,14 @@
 				<xs:element name="Phone" type="xs:string" minOccurs="0"/>
 				<xs:element name="Email" type="xs:string" minOccurs="0"/>
 				<xs:element name="Status" type="xs:integer" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Status">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Code" type="xs:integer"/>
+				<xs:element name="Message" type="xs:string" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
