@@ -15,4 +15,10 @@ export class PartyService {
     ).map((res) => res.json());
   }
 
+  getParty(id: string) {
+    return this.http.get(
+      ApiUrls.priceList + '/' + id
+    ).map((res) => res.json());
+  }
+
 }
