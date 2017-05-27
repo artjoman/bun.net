@@ -8,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class LoginScreenComponent implements OnInit {
 
   username: string;
+  password: string;
 
   constructor() { }
 
   ngOnInit() {
     this.username = '';
+    this.password = '';
   }
 
   login() {
-    alert("Logged In" + this.username);
+    alert("Logged In with username: " + this.username + " password: "+ this.password);
   }
 }
