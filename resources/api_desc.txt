@@ -1,0 +1,16 @@
+REST
+
+/party
+GET -> retrieves all
+POST -> adds new
+
+/party/{partyId}
+GET -> get specific
+POST -> update
+
+/bun
+GET -> retrieves all
+POST -> adds new
+
+SOAP
+TBD
