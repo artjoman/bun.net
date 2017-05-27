@@ -1,3 +1,10 @@
-<p>
-  login-screen works!
-</p>
+<div>
+  <label for="username">Username</label>
+  <input id="username" [(ngModel)]="username" required/>
+</div>
+<div>
+  <label for="password">Password</label>
+  <input id="password" [(ngModel)]="password" required/>
+</div>
+
+<button md-button (click)="login()">Login</button>

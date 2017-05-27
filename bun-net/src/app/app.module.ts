@@ -10,6 +10,12 @@ import { ListScreenComponent } from './components/screens/list-screen/list-scree
 import { DetailsScreenComponent } from './components/screens/details-screen/details-screen.component';
 import { NewScreenComponent } from './components/screens/new-screen/new-screen.component';
 
+import {
+  MdButtonModule,
+  MdListModule,
+  MdInputModule,
+} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +28,10 @@ import { NewScreenComponent } from './components/screens/new-screen/new-screen.c
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MdButtonModule,
+    MdListModule,
+    MdInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
