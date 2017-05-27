@@ -1,16 +1,16 @@
 REST
 
 /party
-GET -> retrieves all, partyList.json
-POST -> adds new, just status
+GET -> retrieves all as partyList.json
+POST -> adds new, returns HTTP status
 
 /party/{partyId}
-GET -> get specific, party.json
-POST -> update, just status
+GET -> get specific party as party.json
+POST -> update, returns HTTP status
 
 /party/{partyId}/bun
-GET -> retrieves all, bunList.json
-POST -> adds new, just status
+GET -> retrieves all for partyId as bunList.json
+POST -> adds new, returns HTTP status
 
 mocks:
 party list http://www.mocky.io/v2/592946b60f0000bf0b3883c6
