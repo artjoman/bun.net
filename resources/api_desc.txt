@@ -1,22 +1,23 @@
+all services return 200 when OK and 500 when NOK
+
 REST
 
 /party
 GET -> retrieves all as partyList.json
-POST -> adds new, returns HTTP status
+POST -> adds new, returns 201
 
 /party/{partyId}
 GET -> get specific party as party.json
-POST -> update, returns HTTP status
+POST -> update, returns HTTP 200
 
 /party/{partyId}/bun
 GET -> retrieves all for partyId as bunList.json
-POST -> adds new, returns HTTP status
+POST -> adds new, returns 201
 
 REST mock
-party list http://www.mocky.io/v2/592946b60f0000bf0b3883c6
-party http://www.mocky.io/v2/592946f20f0000ca0b3883c9
-bun list http://www.mocky.io/v2/5929470a0f0000cf0b3883ca
-bun http://www.mocky.io/v2/5929471f0f0000cd0b3883cb
+getPartyList http://www.mocky.io/v2/5929773711000053000828d8
+getParty http://www.mocky.io/v2/5929775811000063000828d9
+getBunList http://www.mocky.io/v2/5929777611000052000828da
 
 SOAP
 getPartyList input:none, output:PartyList
