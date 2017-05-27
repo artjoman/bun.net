@@ -1,0 +1,20 @@
+{
+  "bunList": [
+    {
+      "partyId": "1",
+      "quantity": "1",
+      "productType": "1",
+      "time": "2002-05-30T09:30:10",
+      "location": "1",
+      "source": "1"
+    },
+    {
+      "partyId": "2",
+      "quantity": "2",
+      "productType": "2",
+      "time": "2002-05-30T09:30:11",
+      "location": "2",
+      "source": "2"
+    }
+  ]
+}
