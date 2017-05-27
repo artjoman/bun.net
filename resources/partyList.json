@@ -1,0 +1,20 @@
+{
+  "partyList": [
+    {
+      "partyId": "1",
+      "partyName": "John Doe",
+      "partyType": "1",
+      "phone": "1",
+      "email": "john.doe@example.com",
+      "status": "1"
+    },
+    {
+      "partyId": "2",
+      "partyName": "John Doe2",
+      "partyType": "2",
+      "phone": "2",
+      "email": "john.doe2@example.com",
+      "status": "2"
+    }
+  ]
+}
