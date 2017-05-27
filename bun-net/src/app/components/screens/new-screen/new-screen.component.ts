@@ -6,32 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-screen.component.css']
 })
 export class NewScreenComponent implements OnInit {
-  bunname: string;
-  buncount: number;
 
   constructor() { }
 
   ngOnInit() {
-    this.buncount = 1;
   }
 
-  bunCountMore(){
-    if(this.buncount == 10){
-      alert('Maximum count is 10!');
-    }
-    else{
-      this.buncount++;
-    }
+// SLIDER
+  buncount = 1;
+
+
+  autoTicks = false;
+  disabled = false;
+  invert = false;
+  max = 10;
+  min = 1;
+  showTicks = true;
+  step = 1;
+  thumbLabel = true;
+  value = 1;
+  vertical = false;
+
+  get tickInterval(): number | 'auto' {
+    return this.showTicks ? (this.autoTicks ? 'auto' : this._tickInterval) : null;
   }
-
-  bunCountLess(){
-    if(this.buncount == 1){
-      alert('Minimum count is 1!');
-    }
-    else{
-      this.buncount--;
-    }
+  set tickInterval(v) {
+    this._tickInterval = Number(v);
   }
+  private _tickInterval = 1;
+// SLIDER END
 
-
+  placeOrder(){
+    alert(this.buncount);
+  }
 }
