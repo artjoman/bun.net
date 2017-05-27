@@ -14,7 +14,10 @@ import {
   MdButtonModule,
   MdListModule,
   MdInputModule,
+  MdSliderModule
 } from '@angular/material';
+
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import {
     MdButtonModule,
     MdListModule,
     MdInputModule,
+    MdSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
