@@ -1,3 +1,5 @@
+import { PurchaseService } from './services/purchase.service';
+import { PartyService } from './services/party.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -33,7 +35,10 @@ import {
     MdListModule,
     MdInputModule,
   ],
-  providers: [],
+  providers: [
+    PartyService,
+    PurchaseService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
