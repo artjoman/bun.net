@@ -5,6 +5,12 @@
 			<xsd:include schemaLocation="Bun.xsd"/>
 		</xsd:schema>
 	</types>
+	<message name="CreatePartyRequest">
+		<part name="Party" element="tns:Party"/>
+	</message>
+	<message name="CreatePartyResponse">
+		<part name="Status" element="tns:Status"/>
+	</message>
 	<message name="GetPartyListRequest"/>
 	<message name="GetPartyListResponse">
 		<part name="PartyList" element="tns:PartyList"/>
@@ -15,16 +21,16 @@
 	<message name="GetPartyResponse">
 		<part name="Party" element="tns:Party"/>
 	</message>
-	<message name="CreatePartyRequest">
-		<part name="Party" element="tns:Party"/>
-	</message>
-	<message name="CreatePartyResponse">
-		<part name="Status" element="tns:Status"/>
-	</message>
 	<message name="UpdatePartyRequest">
 		<part name="Party" element="tns:Party"/>
 	</message>
 	<message name="UpdatePartyResponse">
+		<part name="Status" element="tns:Status"/>
+	</message>
+	<message name="CreateBunRequest">
+		<part name="Bun" element="tns:Bun"/>
+	</message>
+	<message name="CreateBunResponse">
 		<part name="Status" element="tns:Status"/>
 	</message>
 	<message name="GetBunListRequest">
@@ -33,13 +39,11 @@
 	<message name="GetBunListResponse">
 		<part name="BunList" element="tns:BunList"/>
 	</message>
-	<message name="CreateBunRequest">
-		<part name="Bun" element="tns:Bun"/>
-	</message>
-	<message name="CreateBunResponse">
-		<part name="Status" element="tns:Status"/>
-	</message>
 	<portType name="BunPortType">
+		<operation name="createParty">
+			<input message="tns:CreatePartyRequest"/>
+			<output message="tns:CreatePartyResponse"/>
+		</operation>
 		<operation name="getPartyList">
 			<input message="tns:GetPartyListRequest"/>
 			<output message="tns:GetPartyListResponse"/>
@@ -48,25 +52,30 @@
 			<input message="tns:GetPartyRequest"/>
 			<output message="tns:GetPartyResponse"/>
 		</operation>
-		<operation name="createParty">
-			<input message="tns:CreatePartyRequest"/>
-			<output message="tns:CreatePartyResponse"/>
-		</operation>
 		<operation name="updateParty">
 			<input message="tns:UpdatePartyRequest"/>
 			<output message="tns:UpdatePartyResponse"/>
-		</operation>
-		<operation name="getBunList">
-			<input message="tns:GetBunListRequest"/>
-			<output message="tns:GetBunListResponse"/>
 		</operation>
 		<operation name="createBun">
 			<input message="tns:CreateBunRequest"/>
 			<output message="tns:CreateBunResponse"/>
 		</operation>
+		<operation name="getBunList">
+			<input message="tns:GetBunListRequest"/>
+			<output message="tns:GetBunListResponse"/>
+		</operation>
 	</portType>
 	<binding name="BunPortSOAP11Binding" type="tns:BunPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="createParty">
+			<soap:operation/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
 		<operation name="getPartyList">
 			<soap:operation/>
 			<input>
@@ -85,15 +94,6 @@
 				<soap:body use="literal"/>
 			</output>
 		</operation>
-		<operation name="createParty">
-			<soap:operation/>
-			<input>
-				<soap:body use="literal"/>
-			</input>
-			<output>
-				<soap:body use="literal"/>
-			</output>
-		</operation>
 		<operation name="updateParty">
 			<soap:operation/>
 			<input>
@@ -103,7 +103,7 @@
 				<soap:body use="literal"/>
 			</output>
 		</operation>
-		<operation name="getBunList">
+		<operation name="createBun">
 			<soap:operation/>
 			<input>
 				<soap:body use="literal"/>
@@ -112,7 +112,7 @@
 				<soap:body use="literal"/>
 			</output>
 		</operation>
-		<operation name="createBun">
+		<operation name="getBunList">
 			<soap:operation/>
 			<input>
 				<soap:body use="literal"/>
