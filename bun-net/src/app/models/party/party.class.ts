@@ -1,7 +1,7 @@
 export class Party {
-  partyId: number;
-  partyName: string;
-  partyType: string;
+  id: number;
+  name: string;
+  type: string;
   phone: number;
   email: string;
   status: number;

@@ -41,7 +41,7 @@
 	<xs:element name="Status">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Code" type="xs:integer"/>
+				<xs:element name="Code" type="xs:integer"/><!-- 0 if OK, -1 if unknown error, 1+ if knwon error -->
 				<xs:element name="Message" type="xs:string" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
