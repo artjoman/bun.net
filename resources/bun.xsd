@@ -10,7 +10,7 @@
 	<xs:element name="Bun">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="PartyId" type="xs:integer" minOccurs="0"/>
+				<xs:element name="PartyId" type="xs:string" minOccurs="0"/>
 				<xs:element name="Quantity" type="xs:integer"/>
 				<xs:element name="ProductType" type="xs:integer"/>
 				<xs:element name="Time" type="xs:dateTime"/>
@@ -29,7 +29,7 @@
 	<xs:element name="Party">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="PartyId" type="xs:integer" minOccurs="0"/>
+				<xs:element name="PartyId" type="xs:string" minOccurs="0"/>
 				<xs:element name="PartyName" type="xs:string"/>
 				<xs:element name="PartyType" type="xs:integer"/>
 				<xs:element name="Phone" type="xs:string" minOccurs="0"/>
