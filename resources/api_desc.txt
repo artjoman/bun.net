@@ -19,4 +19,7 @@ bun list http://www.mocky.io/v2/5929470a0f0000cf0b3883ca
 bun http://www.mocky.io/v2/5929471f0f0000cd0b3883cb
 
 SOAP
-TBD
+getPartyList input:none, output:PartyList
+getParty input:Party, output:Party
+createParty input:Party, output:Status
+updateParty input:Party, output:Status
