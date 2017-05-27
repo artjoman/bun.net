@@ -1,0 +1,36 @@
+<definitions name="BunService" targetNamespace="http://bun.net/schema/v1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bun.net/schema/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://bun.net/schema/v1" schemaLocation="Bun.xsd"/>
+		</schema>
+	</types>
+	<message name="CreatePartyRequest">
+		<part ref="tns:Bun"/>
+	</message>
+	<message name="CreatePartyResponse">
+		<part name="Status" type="xsd:string"/>
+	</message>
+	<portType name="BunPortType">
+		<operation name="createParty">
+			<input message="tns:CreatePartyRequest"/>
+			<output message="tns:CreatePartyResponse"/>
+		</operation>
+	</portType>
+	<binding name="BunBinding" type="tns:BunPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation>
+			<soap:operation soapAction="createParty"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="BunService">
+		<port binding="tns:BunBinding" name="BunPort">
+			<soap:address location="http://bun.net"/>
+		</port>
+	</service>
+</definitions>
