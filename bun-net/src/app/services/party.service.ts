@@ -1,6 +1,9 @@
+import { Party } from './../party';
 import { ApiUrls } from './../api-url.class';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PartyService {
@@ -30,10 +33,10 @@ export class PartyService {
    * 
    * @memberof PartyService
    */
-  getParty(id: string) {
+    getParty(id: string): Promise<Party> {
     return this.http.get(
       ApiUrls.singleParty + '/' + id
-    ).map((res) => res.json());
+    ).toPromise().then((res) => res.json());
   }
 
 }
