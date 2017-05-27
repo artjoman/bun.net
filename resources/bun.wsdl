@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions targetNamespace="http://bun.net/schema/v1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://bun.net/schema/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<definitions targetNamespace="http://bun.net/schema/v1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://bun.net/schema/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
 	<types>
-		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bun.net/schema/v1" elementFormDefault="qualified">
-			<xs:include schemaLocation="Bun.xsd"/>
-		</xs:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bun.net/schema/v1" elementFormDefault="qualified">
+			<xsd:include schemaLocation="Bun.xsd"/>
+		</xsd:schema>
 	</types>
+	<message name="GetPartyListRequest"/>
+	<message name="GetPartyListResponse">
+		<part name="PartyList" element="tns:PartyList"/>
+	</message>
+	<message name="GetPartyRequest">
+		<part name="PartyId" type="xsd:string"/>
+	</message>
+	<message name="GetPartyResponse">
+		<part name="Party" element="tns:Party"/>
+	</message>
+	<message name="CreatePartyRequest">
+		<part name="Party" element="tns:Party"/>
+	</message>
+	<message name="CreatePartyResponse">
+		<part name="Status" element="tns:Status"/>
+	</message>
+	<message name="UpdatePartyRequest">
+		<part name="Party" element="tns:Party"/>
+	</message>
+	<message name="UpdatePartyResponse">
+		<part name="Status" element="tns:Status"/>
+	</message>
 	<portType name="BunPortType">
+		<operation name="getPartyList">
+			<input message="tns:GetPartyListRequest"/>
+			<output message="tns:GetPartyListResponse"/>
+		</operation>
+		<operation name="getParty">
+			<input message="tns:GetPartyRequest"/>
+			<output message="tns:GetPartyResponse"/>
+		</operation>
 		<operation name="createParty">
 			<input message="tns:CreatePartyRequest"/>
 			<output message="tns:CreatePartyResponse"/>
 		</operation>
+		<operation name="updateParty">
+			<input message="tns:UpdatePartyRequest"/>
+			<output message="tns:UpdatePartyResponse"/>
+		</operation>
 	</portType>
 	<binding name="BunPortSOAP11Binding" type="tns:BunPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getPartyList">
+			<soap:operation/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="getParty">
+			<soap:operation/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
 		<operation name="createParty">
 			<soap:operation/>
 			<input>
@@ -22,13 +74,16 @@
 				<soap:body use="literal"/>
 			</output>
 		</operation>
+		<operation name="updateParty">
+			<soap:operation/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
 	</binding>
-	<message name="CreatePartyRequest">
-		<part name="Party" element="tns:Party"/>
-	</message>
-	<message name="CreatePartyResponse">
-		<part name="Status" element="tns:Status"/>
-	</message>
 	<service name="BunService">
 		<port name="BunPort" binding="tns:BunPortSOAP11Binding"/>
 	</service>
