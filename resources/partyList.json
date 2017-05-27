@@ -1,7 +1,7 @@
 {
   "partyList": [
     {
-      "partyId": "1",
+      "partyId": "1a",
       "partyName": "John Doe",
       "partyType": "1",
       "phone": "1",
@@ -9,7 +9,7 @@
       "status": "1"
     },
     {
-      "partyId": "2",
+      "partyId": "2b",
       "partyName": "John Doe2",
       "partyType": "2",
       "phone": "2",
