@@ -1,0 +1,120 @@
+project.group = 'springboot.camel.base'
+project.version = '1.0.0'
+
+
+buildscript {
+	ext {
+		springBootVersion = '1.3.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+	}
+	    
+}
+
+
+project.ext {
+
+    cxfVersion = "3.1.5"
+    cxfArtifacts = [
+            'cxf-rt-frontend-jaxws',
+            'cxf-rt-frontend-jaxrs',
+            'cxf-rt-transports-http',
+            'cxf-rt-rs-client',
+            'cxf-rt-rs-service-description'
+      ]
+
+    springBootArtifacts = [
+            'spring-boot-starter',
+            'spring-boot-starter-test',
+            'spring-boot-starter-web',
+            'spring-boot-starter-actuator'
+            
+    ]
+    
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+import org.apache.tools.ant.filters.*
+
+springBoot {
+    executable = true
+}
+
+jar {
+	baseName = 'SpringBoot-Camel-base'
+	version = '0.0.1'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+def camelVersion = '2.16.2'
+
+repositories {
+	mavenCentral()
+	maven { url "http://repo.spring.io/libs-release" }
+	jcenter()
+}
+
+
+dependencies {
+	
+	springBootArtifacts.each { artifact ->
+        compile "org.springframework.boot:$artifact"
+    }
+
+    cxfArtifacts.each { artifact ->
+        compile "org.apache.cxf:$artifact:$cxfVersion"
+    }
+    
+    compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.7.3"
+
+
+    compile("com.h2database:h2:1.4.191")
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    compile("org.apache.camel:camel-spring-boot:${camelVersion}")
+    compile("org.apache.camel:camel-servlet:${camelVersion}")
+    compile("org.apache.camel:camel-core:${camelVersion}")
+    compile("org.apache.camel:camel-cxf:${camelVersion}")
+    compile("org.apache.camel:camel-metrics:${camelVersion}")
+    compile("org.apache.camel:camel-jaxb:${camelVersion}")
+    compile("org.apache.camel:camel-test-spring:${camelVersion}")
+
+    compile("org.apache.camel:camel-http4:${camelVersion}")
+    compile("com.google.guava:guava:19.0")
+    
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+    compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.2'
+
+
+    compile("org.jolokia:jolokia-core")
+    compile("io.hawt:hawtio-springboot:1.4.64")
+    compile("io.hawt:hawtio-core:1.4.64")
+    
+    
+
+
+
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.9'
+}
