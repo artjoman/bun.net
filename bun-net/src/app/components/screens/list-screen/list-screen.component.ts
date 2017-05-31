@@ -1,6 +1,7 @@
 import { PartyService } from './../../../services/party.service';
 import { Party } from './../../../party';
 import { Component, OnInit } from '@angular/core';
+import { Router }            from '@angular/router';
 
 // const PARTIES: Party[] = [
 //   { id: 231231, name: 'Johsdfsn Doe', type: '231', phone: 1, email: 'john.doe@example.com', status: 1 },
@@ -13,10 +14,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-screen.component.css']
 })
 export class ListScreenComponent implements OnInit {
-  parties;
+  parties: Party[];
+  selectedParty: Party;
 
   constructor(
     private partyService: PartyService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,5 +31,10 @@ export class ListScreenComponent implements OnInit {
       }
       );
   }
+
+      gotoDetail(party: Party): void {
+        this.selectedParty = party;
+      this.router.navigate(['/details', this.selectedParty.partyId]);
+    }
 
 }

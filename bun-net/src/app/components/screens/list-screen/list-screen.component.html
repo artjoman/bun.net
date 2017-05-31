@@ -1,14 +1,7 @@
-<p>
-  list-screen works!
-</p>
-
 <ul>
-  <li *ngFor="let party of parties">
-    <span>party id: {{party.partyId}}</span>
-    <span>name: {{party.partyName}}</span>
-    <span>type: {{party.partyType}}</span>
-    <span>phone: {{party.phone}}</span>
-    <span>email: {{party.email}}</span>
-    <span>status: {{party.status}}</span>
-  </li>
+  <md-list *ngFor="let party of parties" >
+    <button md-button (click)="gotoDetail(party)">
+      Party {{party.partyName}} with type {{party.partyType}}
+    </button>
+  </md-list>
 </ul>

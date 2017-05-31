@@ -1,3 +1,4 @@
+import { GetParty } from './../models/party/get-party.class';
 import { Party } from './../party';
 import { ApiUrls } from './../api-url.class';
 import { Http } from '@angular/http';
@@ -36,7 +37,11 @@ export class PartyService {
     getParty(id: string): Promise<Party> {
     return this.http.get(
       ApiUrls.singleParty + '/' + id
-    ).toPromise().then((res) => res.json());
+    ).toPromise().then((res) => {
+      console.log(res.json());
+      return res.json() as Party;
+    }
+    );
   }
 
 }
