@@ -1,31 +1,25 @@
-<div class="text-center">
-<h3>
-  New item
-</h3>
-<div class="padding-10">
-  <label for="bunname">Bun Name</label>
-</div>
-<div>
-  <input id="bunname" [(ngModel)]="bunname" required/>
-</div>
+<div class="text-center card">
+  <h1>
+    New order
+  </h1>
+  <div>
+    <md-input-container class="padding-10">
+      <input mdInput placeholder="Bun Name" [(ngModel)]="bunname">
+    </md-input-container>
+  </div>
 
-<div class="padding-10">
-  <label for="buncount">Bun Count</label>
-</div>
-<div>
-<md-slider class="bun-slider" [(ngModel)]="buncount"
-        [disabled]=false
-        [invert]=false
-        [max]=10
-        [min]=1
-        [step]=1
-        [thumb-label]=true
-        [tick-interval]=1
-        [value]=1
-        [vertical]=false>
+  <div class="padding-10">
+    <label for="buncount">Bun Count</label>
+  </div>
+  <div class="padding-10">
+    {{this.buncount}}
+  </div>
+  <div>
+    <md-slider class="bun-slider" [(ngModel)]="buncount" onchange="showBunCount()" [disabled]=false [invert]=false [max]=10 [min]=1
+      [step]=1 [thumb-label]=true [tick-interval]=1 [value]=1 [vertical]=false>
     </md-slider>
-</div>
-<div class="padding-10">
-<button md-button (click)="placeOrder()">Place Order</button>
-</div>
+  </div>
+  <div class="padding-10">
+    <button md-button (click)="placeOrder()">Place Order</button>
+  </div>
 </div>

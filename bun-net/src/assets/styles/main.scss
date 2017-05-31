@@ -1,0 +1,63 @@
+@import '../styles/bootstrap/bootstrap.css';
+@import '../styles/colors/colors.scss';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+/*CUSTOM CSS*/
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+.padding-10{
+    padding: 10px;
+    /*border: 1px solid #eee;*/
+}
+.card{
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0px 1px 4px #666;
+    padding: 10px;
+    margin: 4px;
+}
+h1{
+ color: #263238;
+ padding: 10px;
+}
+/*MENU*/
+.top-menu{
+    background-color: #cfd8dc;
+    box-shadow: 0px 2px 4px #666;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    text-align: center;
+}
+nav .menu-icons{
+    font-size: 32px;
+    color: #546e7a;
+    margin-left: 10px;
+}
+nav .menu-icons:hover{
+    color: #78909c;
+}
+nav .menu-icons .active-link{
+    color: #455a64;
+}
+// SLIDER
+.bun-slider{
+    width: 250px;
+}
+
+.text-center{
+    text-align: center;
+    align-content: center;
+}
+.text-left{
+    text-align: left;
+    align-content: left;
+}
+.text-right{
+    text-align: right;
+    align-content: right;
+}
+

@@ -5,15 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './new-screen.component.html',
   styleUrls: ['./new-screen.component.css']
 })
+
 export class NewScreenComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() {
+  }
+
 
   ngOnInit() {
   }
 
-// SLIDER
-  buncount = 1;
+  // SLIDER
+  buncount: number = 1;
+  bunname: string = '';
+  message: string = '';
 
 
   autoTicks = false;
@@ -34,9 +40,13 @@ export class NewScreenComponent implements OnInit {
     this._tickInterval = Number(v);
   }
   private _tickInterval = 1;
-// SLIDER END
+  // SLIDER END
+  showBuncount() {
+    this.buncount = this.buncount;
+  }
 
-  placeOrder(){
-    alert(this.buncount);
+  placeOrder() {
+    this.message = 'You have been ordered ' + this.buncount + ' of "' + this.bunname + '"';
+    alert(this.message);
   }
 }
