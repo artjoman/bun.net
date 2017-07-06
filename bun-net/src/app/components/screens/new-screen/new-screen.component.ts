@@ -46,7 +46,7 @@ export class NewScreenComponent implements OnInit {
   }
 
   placeOrder() {
-    this.message = 'You have been ordered ' + this.buncount + ' of "' + this.bunname + '"';
+    this.message = 'You have been ordered ' + this.buncount + ' of *' + this.bunname + '*';
     alert(this.message);
   }
 }
